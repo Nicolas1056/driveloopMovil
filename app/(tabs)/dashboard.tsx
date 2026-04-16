@@ -102,6 +102,7 @@ export default function Dashboard() {
               horizontal
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{ paddingHorizontal: 20 }}
+              snapToAlignment="start"
               snapToInterval={280 + 16} // card width (280) + marginRight (16)
               decelerationRate="fast"
             >
@@ -123,25 +124,35 @@ export default function Dashboard() {
 
                     {/* Info de la tarjeta */}
                     <View className="p-4">
-                      <View className="flex-row items-center justify-between mb-2">
-                        <View className="flex-row items-center flex-1">
-                          <Text className="font-bold text-gray-900 mr-1 text-sm">Marca:</Text>
-                          <Text className="text-gray-700 uppercase text-xs flex-shrink">{car.marca}</Text>
+                      {/* Primera Fila: Marca y Modelo */}
+                      <View className="flex-row items-center mb-3">
+                        <View className="flex-1 flex-row items-center">
+                          <Text className="font-roboto-bold text-gray-900 text-[10px] uppercase w-12">Marca:</Text>
+                          <Text className="text-gray-600 text-xs font-roboto-medium flex-1 uppercase" numberOfLines={1}>
+                            {car.marca}
+                          </Text>
                         </View>
-                        <View className="flex-row items-center justify-end flex-1" style={{ marginLeft: 8 }}>
-                          <Text className="font-bold text-gray-900 mr-1 text-sm">Modelo:</Text>
-                          <Text className="text-gray-700 text-xs" numberOfLines={1}>{car.modelo}</Text>
+                        <View className="flex-1 flex-row items-center ml-2">
+                          <Text className="font-roboto-bold text-gray-900 text-[10px] uppercase w-14">Modelo:</Text>
+                          <Text className="text-gray-600 text-xs font-roboto-medium flex-1" numberOfLines={1}>
+                            {car.modelo}
+                          </Text>
                         </View>
                       </View>
 
-                      <View className="flex-row items-center justify-between">
-                        <View className="flex-row items-center flex-1">
-                          <Text className="font-bold text-gray-900 mr-1 text-sm">Línea:</Text>
-                          <Text className="text-gray-700 uppercase text-xs flex-shrink" numberOfLines={1}>{car.linea}</Text>
+                      {/* Segunda Fila: Línea y Color */}
+                      <View className="flex-row items-center">
+                        <View className="flex-1 flex-row items-center">
+                          <Text className="font-roboto-bold text-gray-900 text-[10px] uppercase w-12">Línea:</Text>
+                          <Text className="text-gray-600 text-xs font-roboto-medium flex-1 uppercase" numberOfLines={1}>
+                            {car.linea}
+                          </Text>
                         </View>
-                        <View className="flex-row items-center justify-end flex-1" style={{ marginLeft: 8 }}>
-                          <Text className="font-bold text-gray-900 mr-1 text-sm">Color:</Text>
-                          <Text className="text-gray-700 text-xs" numberOfLines={1}>{car.color}</Text>
+                        <View className="flex-1 flex-row items-center ml-2">
+                          <Text className="font-roboto-bold text-gray-900 text-[10px] uppercase w-14">Color:</Text>
+                          <Text className="text-gray-600 text-xs font-roboto-medium flex-1 capitalize" numberOfLines={1}>
+                            {car.color}
+                          </Text>
                         </View>
                       </View>
                     </View>
