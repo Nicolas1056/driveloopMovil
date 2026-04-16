@@ -66,8 +66,14 @@ export default function VerifyEmailScreen() {
         <ScreenLayout paddingHorizontal={16}>
             <View className="flex-1 justify-center items-center px-4">
                 <MaterialIcons name="mark-email-unread" size={90} color="#b91c1c" style={{ marginBottom: 24 }} />
-                <Text className="text-base text-gray-700 text-center leading-6 mb-10">
-                    ¡Gracias por registrarte! Antes de comenzar verifica tu correo electrónico haciéndo clic en el enlace que te acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro, haz click <CustomButton title={isResending ? "Enviando..." : "aquí"} variant="textOnly" textClassName='text-md' onPress={handleResend} />
+                <Text className="text-base text-gray-700 text-center leading-6 mb-10 px-2">
+                    ¡Gracias por registrarte! Antes de comenzar verifica tu correo electrónico haciéndo clic en el enlace que te acabamos de enviar. Si no recibiste el correo electrónico, con gusto te enviaremos otro, haz click{' '}
+                    <Text 
+                        onPress={handleResend}
+                        className="text-primary font-roboto-bold underline"
+                    >
+                        {isResending ? "enviando..." : "aquí"}
+                    </Text>
                 </Text>
                 <View className="w-full">
                     <View className="mb-4">
